@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title>Introdução ao jQuery</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="container">
+
+<h1>Treinamentos</h1>
+
+<input id="botao-atualiza" type="button" value="atualizar lista">
+
+<ul id="lista">
+	<li>Lógica de Programação</li>
+	<li>Dando os primeiros passos na web com HTML e CSS</li>
+	<li>Banco de dados e SQL</li>
+	<li>Ruby on Rails: do zero com deploy</li>
+	<li>NodeJS e Socket I/O</li>
+	<li>Vraptor: web fácil e rápida</li>
+	<li>Git: trabalhe em equipe com controle e segurança</li>
+	<li>Primeiros passos com Java</li>
+</ul>
+
+<label>Novo treinamento:</label>
+<input id="treinamento">
+<input id="botao-adiciona" type="button" value="adicionar"/>
+
+<script src="js/jquery.js"></script>
+<script>
+
+  $('#botao-adiciona').click(function() {
+  	  var treinamento = $('#treinamento');
+      var texto = treinamento.val();
+      treinamento.val('');
+      $('<li>').text(texto).css({ 'color' : 'blue', 'background-color' : 'lightgrey'}).appendTo('#lista');
+  });
+</script>
+
+</body>
+</html>
