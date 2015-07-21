@@ -36,6 +36,12 @@
       treinamento.val('');
       $('<li>').text(texto).css({ 'color' : 'blue', 'background-color' : 'lightgrey'}).appendTo('#lista');
   });
+
+	$('#lista').on("dblclick", "li", function() {
+		$(this).animate({ "margin-left" : "+=100"}, function() {
+			$(this).remove();
+		});
+	});
 </script>
 
 </body>
