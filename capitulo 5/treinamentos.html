@@ -43,6 +43,28 @@
       treinamento.val('');
       $('<li>').text(texto).css({ 'color' : 'blue', 'background-color' : 'lightgrey'}).appendTo('#lista');
   });
+    
+    //$('#botao-atualiza').click(function() {
+	//	$.ajax({
+	//					url: 'http://mirrorfashion.caelum.com.br/treinamentos',
+	//					dataType: 'jsonp',
+	//					success: function(retorno) {
+	//						$.each(retorno.treinamentos, function() {
+	//							var treinamento = this;
+	//							$('<li>').text(treinamento.nome).css('color', 'green').appendTo('#lista');
+	//						});
+	//					}
+	//	});
+	//});
+
+	$('#botao-atualiza').click(function() {
+		$.get('http://mirrorfashion.caelum.com.br/treinamentos', function(retorno) {
+			$.each(retorno.treinamentos, function() {
+				var treinamento = this;
+				$('<li>').text(treinamento.nome).css('color', 'green').appendTo('#lista');
+			});
+		}, 'jsonp');
+	});
 </script>
 
 </body>
