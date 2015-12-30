@@ -29,12 +29,30 @@
 
 <script src="js/jquery.js"></script>
 <script>
+	$("#botao-atualiza").click(function(){
+		/* $.ajax({
+						url: "http://mirrorfashion.caelum.com.br/treinamentos",
+						dataType: "jsonp",
+						success: function(retorno) {
+							$.each(retorno.treinamentos, function() {
+								var treinamento = this;
+								$("<li>").text(treinamento.nome).css("color", "green").appendTo("#lista");
+							});
+						}
+		});*/
 
+		$.get("http://mirrorfashion.caelum.com.br/treinamentos", function(retorno) {
+			$.each(retorno.treinamentos, function() {
+				var treinamento = this;
+				$("<li>").text(treinamento.nome).css("color", "green").appendTo("#lista");
+			});
+    } , "jsonp")
+	});
 
   $('#lista').on('dblclick', 'li', function() {
   	$(this).animate({'margin-left' : '+=100'}, function() {
   		$(this).remove();
-  	});	
+  	});
   });
 
   $('#botao-adiciona').click(function() {

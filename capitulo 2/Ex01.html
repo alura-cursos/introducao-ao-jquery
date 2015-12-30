@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+ <body>
+ <input id="botao" value="click" type="button"/>
+ <p id="descricao">jquery</p>
+
+ <script src="js/jquery.js"></script>
+ <script>
+   $("#botao").on("click", function() {
+     $("#descricao").text("novo texto");
+   });
+ </script>
+ </body>
+</html>
