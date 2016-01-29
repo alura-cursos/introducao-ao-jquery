@@ -30,12 +30,18 @@
 <script src="js/jquery.js"></script>
 <script>
 
-  $('#botao-adiciona').click(function() {
-  	  var treinamento = $('#treinamento');
-      var texto = treinamento.val();
-      treinamento.val('');
-      $('<li>').text(texto).css({ 'color' : 'blue', 'background-color' : 'lightgrey'}).appendTo('#lista');
+  $('#botao-adiciona').click(function(){
+		var texto = $('#treinamento').val();
+		$('<li>').val(texto);
+		$('<li>').text(texto).css({'color' : 'blue' , 'background-color' : 'lightgrey'}).appendTo('#lista');
+	});
+
+  $("#lista").on('dblclick', 'li', function(){
+  	$(this).animate({'margin-left' : '+=100'}, 4000 , function(){
+  		$(this).remove();
+  	});
   });
+
 </script>
 
 </body>

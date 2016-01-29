@@ -29,6 +29,15 @@
 
 <script src="js/jquery.js"></script>
 <script>
+	$('#lista').on('click', 'li', function(){
+		alert($(this).text());
+	});
+	$('#botao-adiciona').click(function(){
+		var texto = $('#treinamento').val();
+		$('<li>').val(texto);
+		$('<li>').text(texto).appendTo('#lista');
+	});
+	
 
 </script>
 
