@@ -18,7 +18,20 @@
 
 	<script src="js/jquery.js"></script>
 	<script>
-       $('#texto-copiado').text('Alura');
+		$('#botao-copiar').click(function(){
+			var input = $('#campo-nome');
+			var nome = input.val();
+			input.val('');
+			$('#texto-copiado').text(nome);
+			input.focus();
+		});
+		$('#campo-nome').blur(function(){
+			var campo = $(this);
+			var nome = campo.val();
+			$('#texto-copiado').text(nome);
+			campo.val('');
+		});
+       	
     </script>
 	
 </body>
