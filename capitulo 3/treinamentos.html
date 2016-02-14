@@ -29,8 +29,13 @@
 
 <script src="js/jquery.js"></script>
 <script>
+	$('#botao-adiciona').click(function() {
+	var treinamento = $('#treinamento');
+  	var texto = treinamento.val();
+  	treinamento.val('');
+  	$('<li>').text(texto).appendTo('#lista');
+});
 
 </script>
-
 </body>
 </html>
